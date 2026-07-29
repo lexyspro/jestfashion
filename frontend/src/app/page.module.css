@@ -1,0 +1,397 @@
+/* ─── Hero ─── */
+.hero {
+  min-height: calc(100svh - var(--navbar-height));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-obsidian);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-20) var(--container-padding) var(--space-20) var(--container-padding);
+  padding-left: max(var(--container-padding), calc((100vw - var(--container-max)) / 2 + var(--container-padding)));
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  color: #fff;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: var(--color-gold-light);
+}
+
+.heroSub {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  max-width: 380px;
+  margin-bottom: var(--space-8);
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.heroImageWrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImageBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #1a1008 0%,
+    #0f0a05 30%,
+    #1e1510 60%,
+    #0a0a0a 100%
+  );
+}
+
+/* Decorative pattern overlay */
+.heroImageWrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(201, 169, 110, 0.04) 40px,
+      rgba(201, 169, 110, 0.04) 41px
+    );
+  z-index: 1;
+}
+
+/* Gold accent line */
+.heroImageWrap::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+  z-index: 2;
+}
+
+.heroBadge {
+  position: absolute;
+  bottom: var(--space-10);
+  right: var(--space-10);
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.heroBadgeLabel {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.heroBadgeWa {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: #25d366;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Brands Strip ─── */
+.brandsStrip {
+  border-bottom: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-block: var(--space-6);
+  background: var(--color-bg-secondary);
+}
+
+.brandsLabel {
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.brandsList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.brandItem {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-stone);
+  transition: color var(--duration-fast);
+  white-space: nowrap;
+}
+
+.brandItem:hover {
+  color: var(--color-text-primary);
+}
+
+/* ─── Ad Banner ─── */
+.adBanner {
+  background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-obsidian) 100%);
+  padding-block: var(--space-16);
+  margin-block: var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.adBannerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-10);
+  position: relative;
+  z-index: 1;
+}
+
+.adBannerText {
+  max-width: 480px;
+}
+
+.adBannerDecor {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.adBannerCircle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  position: relative;
+}
+
+.adBannerCircle::before {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+/* ─── Promo Section ─── */
+.promoSection {
+  padding-block: var(--space-16);
+  background: var(--color-bg-secondary);
+}
+
+/* ─── Local Designers ─── */
+.localSection {
+  padding-block: var(--space-20);
+  background: var(--color-bg);
+  position: relative;
+}
+
+.localSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.localBrands {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.localBrandCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition: border-color var(--duration-normal), box-shadow var(--duration-normal), transform var(--duration-normal) var(--ease-out);
+}
+
+.localBrandCard:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent), var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.localBrandLogo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-obsidian);
+  letter-spacing: 0.05em;
+}
+
+.localBrandName {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.localBrandBio {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-1);
+}
+
+/* ─── Categories ─── */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  text-align: center;
+  transition: border-color var(--duration-normal), transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal);
+}
+
+.categoryCard:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.categoryEmoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.categoryLabel {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* ─── WhatsApp CTA ─── */
+.whatsappCta {
+  background: linear-gradient(135deg, #075e54 0%, #128c7e 50%, #075e54 100%);
+  padding-block: var(--space-12);
+  margin-bottom: calc(-1 * var(--space-20));
+}
+
+.whatsappCtaInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.whatsappIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .categoryGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .localBrands {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 80svh;
+  }
+
+  .heroImageWrap {
+    display: none;
+  }
+
+  .heroContent {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .adBannerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .whatsappCtaInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .categoryGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .localBrands {
+    grid-template-columns: 1fr;
+  }
+
+  .heroActions {
+    flex-direction: column;
+  }
+
+  .brandsList {
+    gap: var(--space-5);
+  }
+}
