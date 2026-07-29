@@ -418,4 +418,4 @@ export function getLocalDesignerBrands(): Brand[] {
   return brands.filter((b) => b.isLocalDesigner);
 }
 
-export const WHATSAPP_NUMBER = '233XXXXXXXXX'; // Replace with actual number
+export const WHATSAPP_NUMBER = '233550103277'; // Replace with actual number
